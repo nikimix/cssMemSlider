@@ -1,6 +1,205 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  min-height: 100%;
+}
+
 body {
-  width: 100%;
   height: 100%;
+  margin: 0;
   font-family: sans-serif;
-  
+  background: linear-gradient(rgb(40, 186, 239),rgb(144, 54, 240));
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 93.7%;
+    padding: 2%;
+  }
+
+  .slider {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .control {
+    justify-self: center;
+  }
+
+  .caption_text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    max-width: 62.5rem;
+    padding: 2% 0;
+  }
+
+  .slider {
+    grid-template-columns: auto min-content;
+  }
+
+  .slides {
+    grid-column: 1/3;
+  }
+
+  .control {
+    grid-column: 2/3;
+  }
+
+  .caption {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .caption_text {
+    font-size: 1.2rem;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.slider {
+  width: 100%;
+  display: grid;
+  row-gap: 1rem;
+}
+
+input[id="btn-1"]:checked~.control label[for="btn-1"],
+input[id="btn-2"]:checked~.control label[for="btn-2"],
+input[id="btn-3"]:checked~.control label[for="btn-3"],
+input[id="btn-4"]:checked~.control label[for="btn-4"],
+input[id="btn-5"]:checked~.control label[for="btn-5"] {
+  background-color: transparent;
+  outline-width: 0.1rem;
+  outline-style: solid;
+  outline-offset: -0.6rem;
+  outline-color: white;
+}
+
+input[id="btn-1"]:checked~.slides .slides_img {
+  transform: translateX(0%);
+}
+
+input[id="btn-2"]:checked~.slides .slides_img {
+  transform: translateX(-100%);
+}
+
+input[id="btn-3"]:checked~.slides .slides_img {
+  transform: translateX(-200%);
+}
+
+input[id="btn-4"]:checked~.slides .slides_img {
+  transform: translateX(-300%);
+}
+
+input[id="btn-5"]:checked~.slides .slides_img {
+  transform: translateX(-400%);
+}
+
+input[id="btn-1"]:checked~.caption .caption_wrap {
+  transform: translateX(0%);
+}
+
+input[id="btn-2"]:checked~.caption .caption_wrap {
+  transform: translateX(-100%);
+}
+
+input[id="btn-3"]:checked~.caption .caption_wrap {
+  transform: translateX(-200%);
+}
+
+input[id="btn-4"]:checked~.caption .caption_wrap {
+  transform: translateX(-300%);
+}
+
+input[id="btn-5"]:checked~.caption .caption_wrap {
+  transform: translateX(-400%);
+}
+
+.slides {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.slides_wrap {
+  display: flex;
+}
+
+.slides_img {
+  width: 100%;
+  transition: 0.3s;
+  display: block;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.control-caption-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.control {
+  display: flex;
+  width: min-content;
+}
+
+.control label {
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(255, 255, 255);
+  background-clip: content-box;
+  border-radius: 50%;
+}
+
+.control label:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.caption {
+  width: 70%;
+  overflow: hidden;
+}
+
+.caption_wrap {
+  transition: 0.3s;
+  transform: translate(0%);
+  width: 100%;
+  display: flex;
+}
+
+.caption_text {
+  margin: 0;
+  flex-shrink: 0;
+  width: 100%;
+  color: white;
+}
+
+.caption_text span {
+  font-size: 0.8em;
+}
+
+.caption_text span+span {
+  font-size: 0.6em;
 }
