@@ -46,7 +46,7 @@ body {
 @media (min-width: 768px) {
   .wrapper {
     max-width: 62.5rem;
-    padding: 2% 0;
+    padding: 2% 5%;
   }
 
   .slider {
