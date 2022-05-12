@@ -23,7 +23,7 @@ body {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .wrapper {
     width: 93.7%;
     padding: 2%;
