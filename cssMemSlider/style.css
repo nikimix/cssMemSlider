@@ -1,14 +1,5 @@
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.hidden {
+  display: none;
 }
 
 html {
@@ -174,7 +165,11 @@ input[id="btn-5"]:checked~.caption .caption_wrap {
 }
 
 .control label:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(145, 210, 32);
+}
+
+.control label:active {
+  background-color: rgba(145, 210, 32, 0.5);
 }
 
 .caption {
